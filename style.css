@@ -1,11 +1,40 @@
+/*BASE STYLES*/
+
 * {
+
   box-sizing: border-box;
 }
 
 body {
   font-family: 'Open Sans', sans-serif;
+
+}
+
+/*div {
+  float:left;
+  max-width: 45%;
+}*/
+
+/*HEADER STYLES*/
+
+header {
+  background: #455A64;
+  float: left;
 }
 
 h1 {
   color: #FFFFFF;
+}
+
+img {
+  width: 100px;
+}
+
+/*SECOND SECTION STYLES*/
+
+.second-section {
+  background: #cfd8dc;
+  float: left;
+  max-width: 50%;
+  max-height: 100%;
 }
