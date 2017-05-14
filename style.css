@@ -16,29 +16,46 @@ body {
   background: #455A64;
   float: left;
   height: 1000px;
+  padding: 10%;
   width: 50%;
 }
 
 h1 {
   color: #FFFFFF;
   font-size: 80px;
-  margin-top: 30%;
-  text-align: center;
+  margin-top: 20%;
+  text-align: center
+  word-spacing: 20px;
 }
 
 img {
   width: 100px;
 }
 
-input {
-  display: block;
-  font-size: 40px;
-  padding-right: 80px;
+.logo {
+  padding: 0 15px;
 }
 
-.website-inputs {
-  margin: 0 10%;
+input {
+  border: 3px solid #CED2D2;
+  color: #CED2D2;
+  display: block;
+  font-size: 35px;
+  margin-bottom: 10%;
+  padding: 5px;
+  width: 100%;
 }
+
+#enter-btn {
+  background-color: #ffc107;
+  border: 1px solid #ffc107;
+  color: #ffffff;
+}
+
+#enter-btn:hover {
+  background-color: #ffd773;
+}
+
 
 /*SECOND SECTION STYLES*/
 
