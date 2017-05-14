@@ -1,33 +1,43 @@
 /*BASE STYLES*/
 
 * {
-
   box-sizing: border-box;
+  margin: 0;
 }
 
 body {
   font-family: 'Open Sans', sans-serif;
-
 }
 
-/*div {
-  float:left;
-  max-width: 45%;
-}*/
 
-/*HEADER STYLES*/
+/*FIRST SECTION STYLES*/
 
-header {
+.first-section {
   background: #455A64;
   float: left;
+  height: 1000px;
+  width: 50%;
 }
 
 h1 {
   color: #FFFFFF;
+  font-size: 80px;
+  margin-top: 30%;
+  text-align: center;
 }
 
 img {
   width: 100px;
+}
+
+input {
+  display: block;
+  font-size: 40px;
+  padding-right: 80px;
+}
+
+.website-inputs {
+  margin: 0 10%;
 }
 
 /*SECOND SECTION STYLES*/
@@ -35,6 +45,6 @@ img {
 .second-section {
   background: #cfd8dc;
   float: left;
-  max-width: 50%;
-  max-height: 100%;
+  height: 1000px;
+  width: 50%;
 }
