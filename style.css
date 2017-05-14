@@ -121,6 +121,26 @@ button:hover {
 
 /*RESPONSIVE STYLES*/
 
-@media (max-width: ) {
-  
+
+/*Portrait version mobile phones*/
+@media screen and (min-width: 320px) and (max-width: 425px) and (orientation: portrait) {
+  .first-second {
+      float: none;
+      width: 100%;
+
+  }
+  .second-section {
+      float: none;
+      width: auto;
+  }
+  h1 {
+      margin: auto;
+      /*font-size: ;   are we converting the whole page to EMs? */
+  }
+
+
 }
+
+
+}
+/*@media (max-width)*/
