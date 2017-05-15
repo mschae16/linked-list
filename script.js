@@ -1,34 +1,45 @@
+// Global variables
+
+var websiteTitle = $('#website-title').val();
+var websiteUrl = $('#website-url').val();
+
+
 // Toggling the .read class button back and forth
 
-$('.read-btn').on('click', function() {
-  console.log('hello');
-  $(this).toggleClass('.read');
-});
+// $('.read-btn').on('click', function() {
+//   console.log('hello');
+//   $(this).toggleClass('.read');
+//   $(this).parent.parent.toggleClass('');
+// });
+//
+// //button enable on field input typed
+// $(function () {
+//   $('#website-title').keyup(function () {
+//     if ($(this).val() == '') {
+//       //Check to see if there is any text entered
+//       // If there is no text within the input then disable the button
+//           $('.enableOnInput').prop('disabled', true); }
+//     else {
+//       //If there is text in the input, then enable the button
+//           $('.enableOnInput').prop('disabled', false);
+//         }
+//     });
+// });
 
-//button enable on field input typed
-$(function () {
-  $('#website-title').keyup(function () {
-    if ($(this).val() == '') {
-      //Check to see if there is any text entered
-      // If there is no text within the input then disable the button
-          $('.enableOnInput').prop('disabled', true); }
-    else {
-      //If there is text in the input, then enable the button
-          $('.enableOnInput').prop('disabled', false);
-        }
-    });
-});
+
 //Grabbing text from entry fields once ENTER is pressed
-$('#enter-btn').on('click', function() {
-  $('.second-section').prepend(' <article>
-    <h2>The Website Title</h2>
+$('#enter-btn').on('click', generateBookmark);
+
+function generateBookmark(websiteTitle, websiteUrl) {
+  $('.second-section').prepend(` <article>
+    <h2>${websiteTitle}</h2>
     <hr>
-    <a href="wwww.somewebsite.com" target="_blank">www.websiteurl.com</a>
+    <a href="${websiteUrl}" target="_blank">${websiteUrl}</a>
     <hr>
     <div>
     <button class="read-btn">Read</button>
     <button class="delete-btn">Delete</button>
     </div>
-  </article> ');
-
-})
+    </article> `);
+  console.log(websiteTitle);
+}
