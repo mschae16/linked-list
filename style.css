@@ -99,7 +99,7 @@ a:hover {
   border-bottom: 1px solid #ffc107;
 }
 
-.delete {
+.delete-btn {
   float: right;
 }
 
@@ -115,10 +115,11 @@ button:hover {
   border-bottom: 1px solid #ffc107;
 }
 
-/*.read {
+.read-btn.read {
   background-color: #f2f4f4;
   border-bottom: 1px solid #cfd8dc;
-}*/
+  color: #f05a28;
+}
 
 /*RESPONSIVE STYLES*/
 
@@ -156,4 +157,3 @@ button:hover {
 
 
 }
-/*@media (max-width)*/
