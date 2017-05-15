@@ -7,6 +7,7 @@
 
 body {
   font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
 }
 
 
@@ -22,14 +23,14 @@ body {
 
 h1 {
   color: #FFFFFF;
-  font-size: 80px;
+  font-size: 5em;
   margin-top: 20%;
   text-align: center
   word-spacing: 20px;
 }
 
 img {
-  width: 100px;
+  max-width: 100px;
 }
 
 .logo {
@@ -40,7 +41,7 @@ input {
   border: 3px solid #CED2D2;
   color: #CED2D2;
   display: block;
-  font-size: 35px;
+  font-size: 2.1875em;
   margin-bottom: 10%;
   padding: 5px;
   width: 100%;
@@ -75,7 +76,7 @@ article {
 
 h2 {
   color: #455a64;
-  font-size: 30px;
+  font-size: 1.875em;
   font-weight: 400px;
 }
 
@@ -86,7 +87,7 @@ hr {
 
 a {
   color: #607d8b;
-  font-size: 25px;
+  font-size: 1.5625em;
   text-decoration: none;
   border-bottom: 1px solid #f2f4f4;
 }
@@ -124,19 +125,31 @@ button:hover {
 
 /*Portrait version mobile phones*/
 @media screen and (min-width: 320px) and (max-width: 425px) and (orientation: portrait) {
-  .first-second {
+  .first-section {
       float: none;
+      height: 50%;
       width: 100%;
+      padding: 5%;
+  }
+  h1 {
+      margin: 5% auto;
+      font-size: 1.5em;
+      text-align: center;
+
+  }
+  input {
+    margin-bottom: 5%;
 
   }
   .second-section {
       float: none;
       width: auto;
+
   }
-  h1 {
-      margin: auto;
-      /*font-size: ;   are we converting the whole page to EMs? */
+  article {
+      margin: 0;
   }
+
 
 
 }
