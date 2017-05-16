@@ -2,7 +2,7 @@
 
 var websiteTitle = $('#website-title').val();
 var websiteUrl = $('#website-url').val();
-var enterBtn = getElementById('#enter-btn');
+var enterBtn = $('#enter-btn');
 
 // Toggling the .read class button back and forth
 
@@ -22,13 +22,31 @@ $('.delete-btn').on('click', function() {
 
 // Enabling the 'enter' button upon text in the input areas
 
-$('#website-title, #website-url').on('input', function() {
-  if(websiteTitle === '' || websiteUrl === '') {
-    enterBtn.disabled = true;
-  } else {
-    enterBtn.disabled = false;
+function enableButtons () {
+  var userInput = $('#website-title').val();
+  var userInput2 = $('#website-url').val();
+  console.log(userInput)
+  if (userInput !=="" && userInput2 !=="") {
+    $('#enter-btn').prop('disabled', false);
   }
+  else {
+    $('#enter-btn').prop('disabled', true);
+}};
+
+$('#website-title, #website-url').on('input', enableButtons);
+
+
+// Website must be a website (not functional yet, lets work on this or take it to a PAIRING!) https://formden.com/blog/validate-contact-form-jquery
+$('#website-url').on('input', function() {
+  var input=$(this);
+	if (input.val().substring(0,4)=='www.'){input.val('http://www.'+input.val().substring(4));}
+	var re = /(http|ftp|https):\/\/[\w-]+(\.[\w-]+)+([\w.,@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-])?/;
+	var is_url=re.test(input.val());
+	if(is_url){input.removeClass("invalid").addClass("valid");}
+	else{input.removeClass("valid").addClass("invalid");}
 });
+
+
 
 // //button enable on field input typed
 // $(function () {
@@ -64,4 +82,3 @@ function generateBookmark() {
     </article> `);
   console.log(websiteTitle);
 }
-
