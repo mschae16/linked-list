@@ -1,6 +1,7 @@
 // Toggling the .read class button back and forth
 
 $('.read-btn').on('click', function() {
-  console.log('hello');
-  $(this).toggleClass('.read');
+  $(this).toggleClass('read');
+  $(this).parents().toggleClass('read');
+  $(this).parents().find('a').toggleClass('read');
 });
