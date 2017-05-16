@@ -6,12 +6,13 @@ var websiteUrl = $('#website-url').val();
 
 // Toggling the .read class button back and forth
 
-// $('.read-btn').on('click', function() {
-//   console.log('hello');
-//   $(this).toggleClass('.read');
-//   $(this).parent.parent.toggleClass('');
-// });
-//
+$('.read-btn').on('click', function() {
+  $(this).toggleClass('read');
+  $(this).parents().toggleClass('read');
+  $(this).parents().find('a').toggleClass('read');
+});
+
+
 // //button enable on field input typed
 // $(function () {
 //   $('#website-title').keyup(function () {
