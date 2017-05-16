@@ -44,3 +44,4 @@ function generateBookmark(websiteTitle, websiteUrl) {
     </article> `);
   console.log(websiteTitle);
 }
+
