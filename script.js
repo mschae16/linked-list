@@ -30,6 +30,18 @@ $('#website-title, #website-url').on('input', function() {
   }
 });
 
+// Website must be a website (not functional yet, lets work on this or take it to a PAIRING!) https://formden.com/blog/validate-contact-form-jquery
+$('#website-url').on('input', function() {
+	var input=$(this);
+	if (input.val().substring(0,4)=='www.'){input.val('http://www.'+input.val().substring(4));}
+	var re = /(http|ftp|https):\/\/[\w-]+(\.[\w-]+)+([\w.,@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-])?/;
+	var is_url=re.test(input.val());
+	if(is_url){input.removeClass("invalid").addClass("valid");}
+	else{input.removeClass("valid").addClass("invalid");}
+});
+
+
+
 // //button enable on field input typed
 // $(function () {
 //   $('#website-title').keyup(function () {
@@ -64,4 +76,3 @@ function generateBookmark() {
     </article> `);
   console.log(websiteTitle);
 }
-
