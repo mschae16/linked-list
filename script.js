@@ -12,7 +12,7 @@ $('.read-btn').on('click', function() {
   $(this).parents().find('a').toggleClass('read');
 });
 
-//
+
 // //button enable on field input typed
 // $(function () {
 //   $('#website-title').keyup(function () {
