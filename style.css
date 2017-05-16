@@ -62,7 +62,7 @@ input {
 }
 /*placeholder for showing the button initialized as disabled*/
 #enter-btn:disabled {
-  background-color: green;
+  cursor: no-drop;
 }
 
 
