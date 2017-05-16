@@ -6,7 +6,7 @@ var enterBtn = $('#enter-btn');
 
 // Toggling the .read class button back and forth
 
-$('.read-btn').on('click', function() {
+$('.second-section').on('click', 'button.read-btn', function() {
   $(this).toggleClass('read');
   $(this).parents().toggleClass('read');
   $(this).parents().find('a').toggleClass('read');
@@ -14,10 +14,8 @@ $('.read-btn').on('click', function() {
 
 // When delete button is pressed, bookmark is removed
 
-$('.delete-btn').on('click', function() {
-  $(this).parents().remove();
-  $(this).parents().find('article').remove();
-  console.log('Hello world');
+$('.second-section').on('click', 'button.delete-btn', function() {
+  $(this).parent().parent().remove();
 });
 
 // Enabling the 'enter' button upon text in the input areas
