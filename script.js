@@ -12,6 +12,14 @@ $('.read-btn').on('click', function() {
   $(this).parents().find('a').toggleClass('read');
 });
 
+// When delete button is pressed, bookmark is removed
+
+$('.delete-btn').on('click', function() {
+  $(this).parents().remove();
+  $(this).parents().find('article').remove();
+  console.log('Hello world');
+});
+
 
 // //button enable on field input typed
 // $(function () {
