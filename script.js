@@ -2,7 +2,7 @@
 
 var websiteTitle = $('#website-title').val();
 var websiteUrl = $('#website-url').val();
-
+var enterBtn = getElementById('#enter-btn');
 
 // Toggling the .read class button back and forth
 
@@ -20,6 +20,15 @@ $('.delete-btn').on('click', function() {
   console.log('Hello world');
 });
 
+// Enabling the 'enter' button upon text in the input areas
+
+$('#website-title, #website-url').on('input', function() {
+  if(websiteTitle === '' || websiteUrl === '') {
+    enterBtn.disabled = true;
+  } else {
+    enterBtn.disabled = false;
+  }
+});
 
 // //button enable on field input typed
 // $(function () {
@@ -39,7 +48,10 @@ $('.delete-btn').on('click', function() {
 //Grabbing text from entry fields once ENTER is pressed
 $('#enter-btn').on('click', generateBookmark);
 
-function generateBookmark(websiteTitle, websiteUrl) {
+function generateBookmark() {
+  websiteTitle = $('#website-title').val();
+  websiteUrl = $('#website-url').val();
+
   $('.second-section').prepend(` <article>
     <h2>${websiteTitle}</h2>
     <hr>
