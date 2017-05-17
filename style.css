@@ -17,14 +17,20 @@ body {
   background: #455A64;
   float: left;
   height: 1000px;
-  padding: 10%;
+  padding: 1% 5%;
   width: 50%;
+}
+
+p {
+  text-align: right;
+  color: #ffffff;
+  font-size: 20px;
 }
 
 h1 {
   color: #FFFFFF;
-  font-size: 5em;
-  margin-top: 20%;
+  font-size: 4em;
+  margin-top: 50%;
   text-align: center;
   word-spacing: 20px;
 }
@@ -47,7 +53,7 @@ input {
   width: 100%;
 }
 
-#enter-btn {
+#enter-btn, .clear-all-read {
   background-color: #ffc107;
   border: 1px solid #ffc107;
   color: #ffffff;
@@ -68,11 +74,6 @@ input {
 
 /*SECOND SECTION STYLES*/
 
-p {
-  text-align: center;
-  color: #ffffff;
-  font-size: 20px;
-}
 .second-section {
   background: #cfd8dc;
   float: left;
