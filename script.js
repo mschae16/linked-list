@@ -7,13 +7,13 @@ var totalBookmarks = $('.bookmarks');
 
 // Event Listener to generate bookmarks
 
-$('#enter-btn').on('click', generateBookmark);
+enterBtn.on('click', generateBookmark);
 
 // function to generate new bookmarks
 
 function generateBookmark() {
-  websiteTitle = $('#website-title').val();
-  websiteUrl = $('#website-url').val();
+  var websiteTitle = $('#website-title').val();
+  var websiteUrl = $('#website-url').val();
 
   $('.second-section').prepend(` <article class="bookmarks">
     <h2>${websiteTitle}</h2>
@@ -64,7 +64,7 @@ $('.second-section').on('click', 'button.read-btn', function() {
 // Event to delete bookmarks
 
 $('.second-section').on('click', 'button.delete-btn', function() {
-  $(this).parent().parent().remove();
+  $(this).closest('article').remove();
   updateTotal();
   updateReadCount();
 });
@@ -72,8 +72,7 @@ $('.second-section').on('click', 'button.delete-btn', function() {
 // Event to clear all read bookmarks
 
 $('.first-section').on('click', 'button.clear-all-read', function() {
-  $(this).parent().parent().parent().find('article.read').remove();
-  console.log('hello');
+  $('.read').closest('article').remove()
   updateTotal();
   updateReadCount();
 });
