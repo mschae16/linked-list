@@ -4,18 +4,40 @@ var websiteTitle = $('#website-title').val();
 var websiteUrl = $('#website-url').val();
 var enterBtn = $('#enter-btn');
 
+// Function to update counter for read or unread bookmarks - at this point, only increments.
+
+function updateReadCount() {
+  var readButton = $('button.read-btn');
+
+  if (readButton.hasClass('read') === true) {
+    $('#read-output').html(function(i, val) { return val*1+1 });
+  } else {
+     $('#read-output').html(function(i, val) { return val*1-1 });
+  } console.log('Hello');
+}
+
+
 // Toggling the .read class button back and forth
 
 $('.second-section').on('click', 'button.read-btn', function() {
   $(this).toggleClass('read');
   $(this).parents().toggleClass('read');
   $(this).parents().find('a').toggleClass('read');
+  updateReadCount();
+  console.log('Hello');
 });
 
-// When delete button is pressed, bookmark is removed
+// When delete button is clicked, bookmark is removed.
 
 $('.second-section').on('click', 'button.delete-btn', function() {
   $(this).parent().parent().remove();
+});
+
+// When clear all bookmarks button is clicked, all read bookmarks are removed.
+
+$('.second-section').on('click', 'button.clear-all-read', function() {
+  $(this).parent().parent().find('article.read').remove();
+  console.log('hello');
 });
 
 // Enabling the 'enter' button upon text in the input areas

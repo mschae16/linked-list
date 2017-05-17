@@ -25,7 +25,7 @@ h1 {
   color: #FFFFFF;
   font-size: 5em;
   margin-top: 20%;
-  text-align: center
+  text-align: center;
   word-spacing: 20px;
 }
 
@@ -68,6 +68,11 @@ input {
 
 /*SECOND SECTION STYLES*/
 
+p {
+  text-align: center;
+  color: #ffffff;
+  font-size: 20px;
+}
 .second-section {
   background: #cfd8dc;
   float: left;
