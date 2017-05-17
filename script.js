@@ -5,20 +5,35 @@ var websiteUrl = $('#website-url').val();
 var enterBtn = $('#enter-btn');
 var totalBookmarks = $('.bookmarks');
 
+// Event Listener to generate bookmarks
+
+$('#enter-btn').on('click', generateBookmark);
+
+// function to generate new bookmarks
+
+function generateBookmark() {
+  websiteTitle = $('#website-title').val();
+  websiteUrl = $('#website-url').val();
+
+  $('.second-section').prepend(` <article class="bookmarks">
+    <h2>${websiteTitle}</h2>
+    <hr>
+    <a href="${websiteUrl}" target="_blank">${websiteUrl}</a>
+    <hr>
+    <div>
+    <button class="read-btn">Read</button>
+    <button class="delete-btn">Delete</button>
+    </div>
+    </article> `);
+    updateTotal();
+}
 
 // Function to update total bookmarks counter
 
 function updateTotal() {
   var totalBookmarks = $('.bookmarks');
-  var newTotal = $('#total-output').text(totalBookmarks.length);
-  var numberTotal = $('.bookmarks').length;
-  var totalRead = $('article.read').length;
-  console.log(totalBookmarks);
-  console.log(numberTotal);
-  console.log(totalRead);
-  console.log(numberTotal - totalRead);
-
-  $('#unread-output').text(numberTotal - totalRead);
+  $('#total-output').text(totalBookmarks.length);
+  updateUnreadCount();
 }
 
 // Function to update counter for read bookmarks.
@@ -26,28 +41,27 @@ function updateTotal() {
 function updateReadCount() {
   var totalRead = $('article.read');
   $('#read-output').text(totalRead.length);
-  console.log(totalRead);
+  updateUnreadCount();
 }
 
 // Function to update counter for unread bookmarks.
 
-// function updateUnreadCount() {
-//   var totalUnread = $('article');
-//   if (totalUnread.hasClass('read') === false) {
-//     $('#unread-output').text()
-//   }
-// }
-// Toggling the .read class button back and forth
+function updateUnreadCount() {
+  var numberTotal = $('.bookmarks').length;
+  var totalRead = $('article.read').length;
+  $('#unread-output').text(numberTotal - totalRead);
+}
+
+// Event to toggle the .read class button on and off
 
 $('.second-section').on('click', 'button.read-btn', function() {
   $(this).toggleClass('read');
   $(this).parents().toggleClass('read');
   $(this).parents().find('a').toggleClass('read');
   updateReadCount();
-  console.log('Hello');
 });
 
-// When delete button is clicked, bookmark is removed.
+// Event to delete bookmarks
 
 $('.second-section').on('click', 'button.delete-btn', function() {
   $(this).parent().parent().remove();
@@ -55,14 +69,16 @@ $('.second-section').on('click', 'button.delete-btn', function() {
   updateReadCount();
 });
 
-// When clear all bookmarks button is clicked, all read bookmarks are removed.
+// Event to clear all read bookmarks
 
-$('.second-section').on('click', 'button.clear-all-read', function() {
-  $(this).parent().parent().find('article.read').remove();
+$('.first-section').on('click', 'button.clear-all-read', function() {
+  $(this).parent().parent().parent().find('article.read').remove();
   console.log('hello');
+  updateTotal();
+  updateReadCount();
 });
 
-// Enabling the 'enter' button upon text in the input areas
+// Function to enable the 'enter' button upon text in the input areas
 
 function enableButtons() {
   var userInput = $('#website-title').val();
@@ -88,39 +104,3 @@ $('#website-url').on('input', function() {
 	if(is_url){input.removeClass("invalid").addClass("valid");}
 	else{input.removeClass("valid").addClass("invalid");}
 });
-
-
-//Grabbing text from entry fields once ENTER is pressed
-$('#enter-btn').on('click', generateBookmark);
-
-function generateBookmark() {
-  websiteTitle = $('#website-title').val();
-  websiteUrl = $('#website-url').val();
-
-  $('.second-section').prepend(` <article class="bookmarks">
-    <h2>${websiteTitle}</h2>
-    <hr>
-    <a href="${websiteUrl}" target="_blank">${websiteUrl}</a>
-    <hr>
-    <div>
-    <button class="read-btn">Read</button>
-    <button class="delete-btn">Delete</button>
-    </div>
-    </article> `);
-  console.log(websiteTitle);
-  updateTotal();
-}
-
-// //button enable on field input typed
-// $(function () {
-//   $('#website-title').keyup(function () {
-//     if ($(this).val() == '') {
-//       //Check to see if there is any text entered
-//       // If there is no text within the input then disable the button
-//           $('.enableOnInput').prop('disabled', true); }
-//     else {
-//       //If there is text in the input, then enable the button
-//           $('.enableOnInput').prop('disabled', false);
-//         }
-//     });
-// });

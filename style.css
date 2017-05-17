@@ -10,7 +10,6 @@ body {
   font-size: 16px;
 }
 
-
 /*FIRST SECTION STYLES*/
 
 .first-section {
@@ -22,13 +21,13 @@ body {
 }
 
 p {
-  text-align: right;
   color: #ffffff;
   font-size: 20px;
+  text-align: right;
 }
 
 h1 {
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 4em;
   margin-top: 30%;
   text-align: center;
@@ -66,6 +65,7 @@ input {
 #enter-btn:hover {
   background-color: #ffd773;
 }
+
 /*placeholder for showing the button initialized as disabled*/
 #enter-btn:disabled {
   cursor: no-drop;
@@ -78,8 +78,8 @@ input {
   background: #cfd8dc;
   float: left;
   height: 1000px;
-  width: 50%;
   overflow: scroll;
+  width: 50%;
 }
 
 article {
@@ -101,17 +101,17 @@ hr {
 }
 
 a {
+  border-bottom: 1px solid #f2f4f4;
   color: #607d8b;
   font-size: 1.5625em;
   text-decoration: none;
-  border-bottom: 1px solid #f2f4f4;
 }
 
 a:hover {
+  border-bottom: 1px solid #ffc107;
   color: #455a64;
   font-weight: 800;
   text-decoration: none;
-  border-bottom: 1px solid #ffc107;
 }
 
 .delete-btn {
@@ -119,15 +119,15 @@ a:hover {
 }
 
 button {
-  color: #455a64;
   background: transparent;
   border: none;
   border-bottom: 1px solid #f2f4f4;
+  color: #455a64;
 }
 
 button:hover {
-  font-weight: 800;
   border-bottom: 1px solid #ffc107;
+  font-weight: 800;
 }
 
 .read-btn.read {
@@ -135,9 +135,9 @@ button:hover {
 }
 
 a.read {
+  border-bottom: 1px solid #cfd8dc;
   font-weight: 400;
   text-decoration: none;
-  border-bottom: 1px solid #cfd8dc;
 }
 
 article.read {
@@ -148,42 +148,40 @@ article.read {
 
 
 /*Portrait version mobile phones*/
-@media screen and (min-width: 320px) and (max-width: 425px) and (orientation: portrait) {
+@media screen and (max-width: 600px) {
+
   .first-section {
-      float: none;
-      height: 50%;
-      width: 100%;
-      padding: 5%;
+    float: none;
+    height: 50%;
+    padding: 5%;
+    width: 100%;
   }
+
   h1 {
-      margin: 3% auto;
-      font-size: 1.5em;
-      text-align: center;
+    font-size: 1.5em;
+    margin: 3% auto;
+    text-align: center;
   }
 
   img {
-      max-width: 40px;
+    max-width: 40px;
   }
 
   .logo {
-      padding: 0 5px;
+    padding: 0 5px;
   }
+
   input {
     margin-bottom: 5%;
-
   }
+
   .second-section {
-      float: none;
-      width: auto;
-
+    float: none;
+    width: auto;
   }
+
   article {
-      margin: 0;
+    margin: 0;
   }
-
-
-
-}
-
 
 }
