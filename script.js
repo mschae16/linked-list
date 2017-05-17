@@ -1,13 +1,13 @@
 // Global variables
 
-var websiteTitle = $('#website-title').val();
-var websiteUrl = $('#website-url').val();
-var enterBtn = $('#enter-btn');
-var totalBookmarks = $('.bookmarks');
+// var websiteTitle = $('#website-title').val();
+// var websiteUrl = $('#website-url').val();
+// var enterBtn = $('#enter-btn');
+// var totalBookmarks = $('.bookmarks');
 
 // Event Listener to generate bookmarks
 
-enterBtn.on('click', generateBookmark);
+$('#enter-btn').on('click', generateBookmark);
 
 // function to generate new bookmarks
 
