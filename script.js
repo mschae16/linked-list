@@ -3,20 +3,40 @@
 var websiteTitle = $('#website-title').val();
 var websiteUrl = $('#website-url').val();
 var enterBtn = $('#enter-btn');
+var totalBookmarks = $('.bookmarks');
 
-// Function to update counter for read or unread bookmarks - at this point, only increments.
 
-function updateReadCount() {
-  var readButton = $('button.read-btn');
+// Function to update total bookmarks counter
 
-  if (readButton.hasClass('read') === true) {
-    $('#read-output').html(function(i, val) { return val*1+1 });
-  } else {
-     $('#read-output').html(function(i, val) { return val*1-1 });
-  } console.log('Hello');
+function updateTotal() {
+  var totalBookmarks = $('.bookmarks');
+  var newTotal = $('#total-output').text(totalBookmarks.length);
+  var numberTotal = $('.bookmarks').length;
+  var totalRead = $('article.read').length;
+  console.log(totalBookmarks);
+  console.log(numberTotal);
+  console.log(totalRead);
+  console.log(numberTotal - totalRead);
+
+  $('#unread-output').text(numberTotal - totalRead);
 }
 
+// Function to update counter for read bookmarks.
 
+function updateReadCount() {
+  var totalRead = $('article.read');
+  $('#read-output').text(totalRead.length);
+  console.log(totalRead);
+}
+
+// Function to update counter for unread bookmarks.
+
+// function updateUnreadCount() {
+//   var totalUnread = $('article');
+//   if (totalUnread.hasClass('read') === false) {
+//     $('#unread-output').text()
+//   }
+// }
 // Toggling the .read class button back and forth
 
 $('.second-section').on('click', 'button.read-btn', function() {
@@ -31,6 +51,8 @@ $('.second-section').on('click', 'button.read-btn', function() {
 
 $('.second-section').on('click', 'button.delete-btn', function() {
   $(this).parent().parent().remove();
+  updateTotal();
+  updateReadCount();
 });
 
 // When clear all bookmarks button is clicked, all read bookmarks are removed.
@@ -75,7 +97,7 @@ function generateBookmark() {
   websiteTitle = $('#website-title').val();
   websiteUrl = $('#website-url').val();
 
-  $('.second-section').prepend(` <article>
+  $('.second-section').prepend(` <article class="bookmarks">
     <h2>${websiteTitle}</h2>
     <hr>
     <a href="${websiteUrl}" target="_blank">${websiteUrl}</a>
@@ -86,6 +108,7 @@ function generateBookmark() {
     </div>
     </article> `);
   console.log(websiteTitle);
+  updateTotal();
 }
 
 // //button enable on field input typed
