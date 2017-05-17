@@ -26,6 +26,9 @@ function generateBookmark() {
     </div>
     </article> `);
     updateTotal();
+    $('#website-title').val('');
+    $('#website-url').val('');
+    $('#enter-btn').attr("disabled", true);
 }
 
 // Function to update total bookmarks counter
