@@ -24,12 +24,12 @@ $('.first-section').on('click', 'button.clear-all-read', function() {
 $('#website-url').on('input', function() {
   var input=$(this);
   if
-  (input.val().substring(0,0)==''){input.val('https://'+input.val().substring(8));}
+  (input.val().substring(0,0)==''){input.val('http://'+input.val().substring(7));}
 });
 
 function enableButtons() {
   var userInput = $('#website-title').val();
-  var userInput2 = $('#website-url').val().substring(8);
+  var userInput2 = $('#website-url').val().substring(7);
   if (userInput !=='' && userInput2 !=='') {
     $('#enter-btn').prop('disabled', false);
   }
