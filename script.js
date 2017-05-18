@@ -5,7 +5,7 @@ $('#website-title, #website-url').on('input', enableButtons);
 $('.second-section').on('click', 'button.read-btn', function() {
   $(this).toggleClass('read');
   $(this).parents().toggleClass('read');
-  $(this).parents().find('a').toggleClass('read');
+  $(this).closest('article').find('a').toggleClass('read');
   updateReadCount();
 });
 
@@ -16,7 +16,7 @@ $('.second-section').on('click', 'button.delete-btn', function() {
 });
 
 $('.first-section').on('click', 'button.clear-all-read', function() {
-  $('.read').closest('article').remove()
+  $('.read').closest('article').remove();
   updateTotal();
   updateReadCount();
 });

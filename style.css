@@ -7,7 +7,6 @@
 
 body {
   font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
 }
 
 /**  FIRST SECTION STYLES  **/
@@ -18,12 +17,6 @@ body {
   height: 1000px;
   padding: 1% 5%;
   width: 50%;
-}
-
-p {
-  color: #ffffff;
-  font-size: 20px;
-  text-align: center;
 }
 
 h1 {
@@ -49,7 +42,6 @@ img {
 
 input {
   border: 2px solid #CED2D2;
-  /*color: #CED2D2;*/
   display: block;
   font-size: 30px;
   margin-bottom: 10%;
@@ -76,6 +68,11 @@ input {
   border: 1px solid #cfd8dc;
 }
 
+p {
+  color: #ffffff;
+  font-size: 20px;
+  text-align: center;
+}
 
 /**  SECOND SECTION STYLES  **/
 
@@ -222,12 +219,6 @@ article.read {
     width: 100%;
   }
 
-  /*.count-info {
-    position: absolute;
-    top: 70%;
-    left: 35%;
-  }*/
-
   .text-area {
     max-width: 450px;
   }
@@ -247,7 +238,7 @@ article.read {
   }
 
   input {
-    /*border: 1px solid #CED2D2;*/
+    border: 1px solid #CED2D2;
     font-size: 25px;
     margin: 5% auto;
   }
