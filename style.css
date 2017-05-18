@@ -35,15 +35,20 @@ h1 {
 }
 
 img {
-  max-width: 100px;
+  max-width: 85px;
 }
 
 .logo {
   padding: 0 15px;
 }
 
+.text-area {
+  margin: auto;
+  max-width: 600px;
+}
+
 input {
-  border: 3px solid #CED2D2;
+  border: 2px solid #CED2D2;
   /*color: #CED2D2;*/
   display: block;
   font-size: 30px;
@@ -69,7 +74,6 @@ input {
 #enter-btn:disabled {
   background-color: #cfd8dc;
   border: 1px solid #cfd8dc;
-  cursor: no-drop;
 }
 
 
@@ -106,6 +110,7 @@ a {
   color: #607d8b;
   font-size: 25px;
   text-decoration: none;
+  text-overflow: ellipsis;
 }
 
 a:hover {
@@ -148,9 +153,61 @@ article.read {
 /**  RESPONSIVE STYLES  **/
 
 /**  SMALL DEVICES  **/
+@media screen and (max-width: 1100px) {
+  p {
+    font-size: 15px;
+  }
+
+  h1 {
+    font-size: 50px;
+  }
+
+  img {
+    max-width: 70px;
+  }
+
+  input, h2, #enter-btn, .clear-all-read {
+    font-size: 25px;
+  }
+
+  a {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  h1 {
+    font-size: 35px;
+  }
+
+  img {
+    max-width: 50px;
+  }
+
+  input, h2 {
+    font-size: 20px;
+  }
+
+  button, a {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 30px;
+  }
+
+  img {
+    max-width: 45px;
+  }
+
+  input {
+    font-size: 15px;
+  }
+}
 
 @media screen and (max-width: 600px) {
-
   .first-section {
     float: none;
     height: 50%;
@@ -158,14 +215,24 @@ article.read {
     width: 100%;
   }
 
+  /*.count-info {
+    position: absolute;
+    top: 70%;
+    left: 35%;
+  }*/
+
+  .text-area {
+    max-width: 450px;
+  }
+
   h1 {
-    font-size: 25px;
-    margin: 3% auto;
+    font-size: 35px;
+    margin: 5% auto;
     text-align: center;
   }
 
   img {
-    max-width: 40px;
+    max-width: 45px;
   }
 
   .logo {
@@ -173,7 +240,19 @@ article.read {
   }
 
   input {
+    /*border: 1px solid #CED2D2;*/
+    font-size: 25px;
+    margin: 5% auto;
+  }
+
+  #enter-btn {
+    margin-top: 0;
     margin-bottom: 5%;
+    font-size: 20px;
+  }
+
+  .clear-all-read {
+    font-size: 20px;
   }
 
   .second-section {
@@ -182,7 +261,16 @@ article.read {
   }
 
   article {
-    margin: 0;
+    margin: 20px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  h1 {
+    font-size: 20px;
   }
 
+  img {
+    max-width: 30px;
+  }
 }
